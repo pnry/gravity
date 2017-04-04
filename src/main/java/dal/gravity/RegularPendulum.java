@@ -3,11 +3,11 @@ package dal.gravity;
 /**
  * Represents a pendulum
  */
-public class RegularPendulum extends AbstractEarthPendulum {
+public class RegularPendulum extends AbstractPendulum {
     private double delta, iterations = 0;
     private double dissipation;
     private double lastTheta, lastVel, lastAccel;
-
+    
     /**
      * Creates a new Pendulum instance 
      */
