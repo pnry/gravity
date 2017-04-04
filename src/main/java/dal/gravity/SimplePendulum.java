@@ -6,7 +6,7 @@ package dal.gravity;
 public class SimplePendulum extends AbstractPendulum {
 
     private double angularFrequency, periodOfMotion;
-
+    public double constant;
     /**
      * Creates a new Pendulum instance using
      * inLength: the string length (>0)
@@ -14,7 +14,7 @@ public class SimplePendulum extends AbstractPendulum {
      * inTheta0: angular displacement at t=0 (0<=theta0<=pi/6)
      */
     public SimplePendulum (double inLength, double inMass, double inTheta0) {
-	super (inLength, inMass, inTheta0);
+	super (inLength, inMass, inTheta0, GravityConstant(double constant));
 	angularFrequency = Math.sqrt (this.getGravitationalField1 () / this.getStringLength ());
 	periodOfMotion = 2 * Math.PI 
 	    * Math.sqrt (this.getStringLength () / this.getGravitationalField1 ());

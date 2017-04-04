@@ -14,11 +14,7 @@ public abstract class AbstractPendulum implements GravityModel{
     protected double g; 
     public double inG;
     
-    public double getGravitationalField(){
-    	Scanner keyboard = new Scanner(System.in);
-    	inG = keyboard.nextDouble();
-    	return inG;
-    }
+    
     /**
      * Creates a new Pendulum instance using
      * inLength: the string length (>0)
@@ -26,7 +22,7 @@ public abstract class AbstractPendulum implements GravityModel{
      * inTheta0: angular displacement at t=0 (0<=theta0)
      * inG: gravitational field value to use
      */
-    public AbstractPendulum (double inLength, double inMass, double inTheta0 ) {
+    public AbstractPendulum (double inLength, double inMass, double inTheta0, double inG ) {
    
 	if (validStringLength (inLength)) stringLength = inLength;
 	else throw new IllegalArgumentException ("invalid string length: " + inLength);

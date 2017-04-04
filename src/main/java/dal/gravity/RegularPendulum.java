@@ -7,13 +7,13 @@ public class RegularPendulum extends AbstractPendulum {
     private double delta, iterations = 0;
     private double dissipation;
     private double lastTheta, lastVel, lastAccel;
-    
+    public double constant;
     /**
      * Creates a new Pendulum instance 
      */
     public RegularPendulum (double inLength, double inMass, double inTheta0, 
 		     double inDelta, double inDiss) {
-	super (inLength, inMass, inTheta0);
+	super (inLength, inMass, inTheta0, GravityConstant(double constant));
 	delta=inDelta;
 	dissipation = inDiss;
 	lastVel = 0;
