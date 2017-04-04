@@ -1,9 +1,9 @@
 package dal.gravity;
-
+import java.util.Scanner;
 /**
  * Represents a pendulum
  */
-public abstract class AbstractPendulum {
+public abstract class AbstractPendulum implements GravityModel{
 
 
     /* instance variables - string length, point mass, angular displacement
@@ -12,8 +12,13 @@ public abstract class AbstractPendulum {
     private double stringLength, pointMass;
     protected double theta0; 
     protected double g; 
-    public static final double inG = 9.80665;
-
+    public double inG;
+    
+    public double getGravitationalField(){
+    	Scanner keyboard = new Scanner(System.in);
+    	inG = keyboard.nextDouble();
+    	return inG;
+    }
     /**
      * Creates a new Pendulum instance using
      * inLength: the string length (>0)
@@ -45,6 +50,6 @@ public abstract class AbstractPendulum {
 
     public double getStringLength () { return stringLength; }
 
-    public double getGravitationalField () { return g; }
+    public double getGravitationalField1() { return g; }
 
 }
